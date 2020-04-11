@@ -8,13 +8,13 @@ function App() {
 
   return (
     <div className= "App">
-    <Preview  scale={4} id={'fax'} >
+    <Preview id={'fax'} >
       <div className="fax-header">
         <h1>FAX</h1>
 				<div>
 					<blockquote>
 						<p><span >Date:</span> { (new Date()).toDateString()}</p>
-						<p><span >Pages including cover sheet:</span></p>
+						<p><span >Pages including cover sheet:</span> 1</p>
 					</blockquote>
 
 					<hr />
@@ -36,10 +36,11 @@ function App() {
 					<hr />
 				</div>
 				<h2>Note</h2>
-				<hr/>
+				<br></br>
 				<p>
 				This is the document note.
 				</p>
+				<hr/>
 				<img className="image" src={sampleRx}></img>
 				<div className="confidential">
 					<h2><strong>CONFIDENTIAL</strong></h2>
