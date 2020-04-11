@@ -16,7 +16,6 @@ function App() {
 						<p><span >Date:</span> { (new Date()).toDateString()}</p>
 						<p><span >Pages including cover sheet:</span> 1</p>
 					</blockquote>
-
 					<hr />
 					<h2 >To</h2>
 					<blockquote>
