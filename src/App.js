@@ -13,7 +13,7 @@ function App() {
         <h1>FAX</h1>
 				<div>
 					<blockquote>
-						<p><span >Date:</span> </p>
+						<p><span >Date:</span> { (new Date()).toDateString()}</p>
 						<p><span >Pages including cover sheet:</span></p>
 					</blockquote>
 
@@ -34,13 +34,17 @@ function App() {
 					</blockquote>
 
 					<hr />
-					<h2>Note</h2>
-					<hr/>
-					<p>
-					This is the document note. Hello.
-					</p>
 				</div>
+				<h2>Note</h2>
+				<hr/>
+				<p>
+				This is the document note. Hello.
+				</p>
 				<img className="image" src={sampleRx}></img>
+				<div className="confidential">
+					<h2><strong>CONFIDENTIAL</strong></h2>
+					<p></p>
+				</div>
       </div>
       </Preview>
       <button onClick={()=>print('download_pdf', 'fax')}> print</button>
