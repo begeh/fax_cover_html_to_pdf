@@ -38,7 +38,7 @@ function App() {
 				<h2>Note</h2>
 				<hr/>
 				<p>
-				This is the document note. Hello.
+				This is the document note.
 				</p>
 				<img className="image" src={sampleRx}></img>
 				<div className="confidential">

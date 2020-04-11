@@ -1,16 +1,16 @@
-.App p{
-
+.App {
 }
 
 .confidential{
  margin-top: 15px;
  text-align: center;
- width: 50%; 
+
 }
 
 .fax-header{
   padding: 10px;
   font-size: 2%;
+  width: 45%;
 }
 
 .image{
