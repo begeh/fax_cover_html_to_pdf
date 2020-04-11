@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import sampleRx from './sample-rx.png';
 
 import { Preview, print } from 'react-html2pdf';
 
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <div className= "App">
-    <Preview id={'fax'} >
+    <Preview  scale={4} id={'fax'} >
       <div className="fax-header">
         <h1>FAX</h1>
 				<div>
@@ -36,9 +37,10 @@ function App() {
 					<h2>Note</h2>
 					<hr/>
 					<p>
-					This is the document note
+					This is the document note. Hello.
 					</p>
 				</div>
+				<img className="image" src={sampleRx}></img>
       </div>
       </Preview>
       <button onClick={()=>print('download_pdf', 'fax')}> print</button>
