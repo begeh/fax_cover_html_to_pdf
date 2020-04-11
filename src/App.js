@@ -47,7 +47,7 @@ function App() {
 				</div>
       </div>
       </Preview>
-      <button onClick={()=>print('download_pdf', 'fax')}> print</button>
+      <button className="button" onClick={()=>print('download_pdf', 'fax')}> print</button>
     </div>
     
     
