@@ -40,7 +40,7 @@ function App() {
 				This is the document note.
 				</p>
 				<hr/>
-				<img className="image" src={sampleRx}></img>
+				<img className="image" src={sampleRx} alt="Rx"></img>
 				<div className="confidential">
 					<h2><strong>CONFIDENTIAL</strong></h2>
 					<p></p>
@@ -49,7 +49,6 @@ function App() {
       </Preview>
       <button className="button" onClick={()=>print('download_pdf', 'fax')}> print</button>
     </div>
-    
     
   );
 }
