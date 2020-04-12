@@ -10,7 +10,7 @@ export default function FaxInput (){
   const [receiver, setReceiver] = useState("");
 
   const sumbitNumbers= ()=>{
-    history.push({pathname: "/create", state: {receiver: {receiver}, sender: sender}})
+    history.push({pathname: "/create", state: {receiver: receiver, sender: sender}})
   }
 
   return (

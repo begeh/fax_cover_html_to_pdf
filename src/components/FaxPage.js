@@ -5,7 +5,10 @@ import sampleRx from '../sample-rx.png';
 import { Preview, print } from 'react-html2pdf';
 
 export default function FaxPage(props){
-  const [sender, receiver] = props.location.state
+	const {receiver, sender} = props.location.state;
+
+	console.log(receiver);
+	console.log(sender);
   return (
     <div>
     <Preview id={'fax'}  >
@@ -21,7 +24,7 @@ export default function FaxPage(props){
 					<blockquote>
 						<p><span >Name:</span> (Pharmacy Name)</p>
 						<p><span >Phone:</span> </p>
-						<p><span >Fax Number:</span> </p>
+						<p><span >Fax Number:</span> {receiver} </p>
 					</blockquote>
 
 					<hr />
@@ -29,7 +32,7 @@ export default function FaxPage(props){
 					<blockquote>
 						<p><span >Name:</span> (Dr. Name), (Clinic Name)</p>
 						<p><span >Phone:</span> </p>
-						<p><span >Fax Number:</span> </p>
+						<p><span >Fax Number:</span> {sender}</p>
 					</blockquote>
 
 					<hr />
