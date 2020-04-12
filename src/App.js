@@ -9,7 +9,7 @@ import FaxInput from './components/FaxInput';
 import FaxPage from './components/FaxPage';
 
 function App() {
-
+	
   return (
 		<Router>
 			<Switch>
