@@ -6,6 +6,7 @@ import {useHistory} from "react-router-dom";
 
 export default function FaxInput (){
   let history = useHistory();
+
   const[sender, setSender] = useState({
     sender_name: "",
     sender_fax_number: "",
@@ -18,10 +19,12 @@ export default function FaxInput (){
     receiver_tel_number: ""
   });
 
+  const [imageURL, setImageURL] = useState("");
+
   const [note, setNote] = useState("");
 
   const sumbitNumbers= ()=>{
-    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note}})
+    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note, imageURL: imageURL}})
   }
 
   return (
@@ -71,7 +74,16 @@ export default function FaxInput (){
           </div>
         </div>
       </div>
-      <div className="note-field">
+      <div className="other-field">
+          <TextField
+            variant="outlined"
+            multiline={true}
+            fullWidth={true}  
+            label="Enter Image URL" 
+            value={imageURL} onChange={ e => setImageURL(e.target.value)}
+          />
+        </div>  
+      <div className="other-field">
           <TextField
             variant="outlined"
             inputProps={{
