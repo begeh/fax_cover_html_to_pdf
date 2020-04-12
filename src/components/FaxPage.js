@@ -5,7 +5,7 @@ import sampleRx from '../sample-rx.png';
 import { Preview, print } from 'react-html2pdf';
 
 export default function FaxPage(props){
-  
+  const [sender, receiver] = props.location.state
   return (
     <div>
     <Preview id={'fax'}  >
