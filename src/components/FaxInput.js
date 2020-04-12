@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import '../App.css';
-import {TextField, Button} from '@material-ui/core/';
+import {TextField, Button, responsiveFontSizes} from '@material-ui/core/';
 
 import {useHistory} from "react-router-dom";
 
 export default function FaxInput (){
   let history = useHistory();
+
   const[sender, setSender] = useState({
     sender_name: "",
     sender_fax_number: "",
@@ -18,10 +19,12 @@ export default function FaxInput (){
     receiver_tel_number: ""
   });
 
+  const [imageURL, setImageURL] = useState("");
+
   const [note, setNote] = useState("");
 
   const sumbitNumbers= ()=>{
-    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note}})
+    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note, imageURL: imageURL}})
   }
 
   return (
@@ -33,18 +36,21 @@ export default function FaxInput (){
         <div className="form-input">
           <div>
             <TextField 
-                label="Fax Recipient Name" 
-                value={receiver.receiver_name} onChange={ e => setReceiver({...receiver, receiver_name: e.target.value})}
+              InputLabelProps={{style: {fontSize: "0.8rem"}}} 
+              label="Fax Recipient Name" 
+              value={receiver.receiver_name} onChange={ e => setReceiver({...receiver, receiver_name: e.target.value})}
               />
           </div>
           <div>
             <TextField 
+              InputLabelProps={{style: {fontSize: "0.8rem"}}} 
               label="Fax Recipient Tel. #" 
               value={receiver.receiver_tel_number} onChange={ e => setReceiver({...receiver, receiver_tel_number: e.target.value})}
             />
           </div>
           <div>
             <TextField 
+              InputLabelProps={{style: {fontSize: "0.8rem"}}} 
               label="Fax Recipient Fax #" 
               value={receiver.receiver_fax_number} onChange={ e => setReceiver({...receiver, receiver_fax_number: e.target.value})}
             />
@@ -53,30 +59,43 @@ export default function FaxInput (){
         <div className="form-input">
           <div>
             <TextField  
+              InputLabelProps={{style: {fontSize: "0.8rem"}}} 
               label="Fax Sender Name" 
               value={sender.sender_name} onChange={ e => setSender({...sender, sender_name: e.target.value})}
             />
           </div>
           <div>
             <TextField  
+              InputLabelProps={{style: {fontSize: "0.8rem"}}} 
               label="Fax Sender Tel. #" 
               value={sender.sender_tel_number} onChange={ e => setSender({...sender, sender_tel_number: e.target.value})}
             />
           </div>
           <div>
-            <TextField  
+            <TextField
+              InputLabelProps={{style: {fontSize: "0.8rem"}}}   
               label="Fax Sender Fax #" 
               value={sender.sender_fax_number} onChange={ e => setSender({...sender, sender_fax_number: e.target.value})}
             />
           </div>
         </div>
       </div>
-      <div className="note-field">
+      <div className="other-field" hidden>
+          <TextField
+            variant="outlined"
+            multiline={true}
+            fullWidth={true} 
+            label="Enter Image URL" 
+            value={imageURL} onChange={ e => setImageURL(e.target.value)}
+          />
+        </div>  
+      <div id="field" className="other-field">
           <TextField
             variant="outlined"
             inputProps={{
-              maxLength: 110,
+              maxLength: 110
             }}
+            InputLabelProps={{style: {fontSize: "0.8rem"}}} 
             multiline={true}
             fullWidth={true}  
             label="Enter Note (max. 110 chars)" 
