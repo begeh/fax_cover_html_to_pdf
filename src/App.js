@@ -1,27 +1,24 @@
-import React, {Fragment} from 'react';
-import './App.css';
-import {TextField, Button} from '@material-ui/core/';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+	Switch
+} from "react-router-dom";
+
+import FaxInput from './components/FaxInput';
+import FaxPage from './components/FaxPage';
 
 function App() {
 
-
   return (
-
-		<div className="App">
-			<p>Enter Fax Information</p>
-			<form className="form" noValidate autoComplete="off">
-				<TextField id="standard-basic" label="Fax Recipient Fax #" />
-				<TextField id="standard-basic" label="Fax Sender Fax #" />
-			</form>
-			<Button
-              type="submit"
-              fullWidth
-              variant="contained"
-							color="primary"
-							
-            > 
-						Submit </Button>
-		</div>
+		<Router>
+			<Switch>
+				<Route exact path="/" >
+					<FaxInput />
+				</Route>
+				<Route path="/create" component={props=><FaxPage {...props}/>} />
+			</Switch>
+		</Router>
 	
   );
 }
