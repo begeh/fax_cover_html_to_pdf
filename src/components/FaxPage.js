@@ -1,10 +1,10 @@
-import React, {Fragment} from 'react';
-import './App.css';
-import sampleRx from 'components/sample-rx.png';
+import React from 'react';
+import '../App.css';
+import sampleRx from '../sample-rx.png';
 
 import { Preview, print } from 'react-html2pdf';
 
-export default function FaxCover(props){
+export default function FaxPage(props){
   
   return (
     <div>
