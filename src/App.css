@@ -62,3 +62,24 @@
   height:25px;
   margin-left: 20%;
 }
+
+@media screen and (max-width: 986px) {
+  .form{
+    margin-left: 28%;
+    margin-right: 28%;
+  }
+}
+
+@media screen and (max-width: 624px) {
+  .form{
+    margin-left: 26%;
+    margin-right: 26%;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .form{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
