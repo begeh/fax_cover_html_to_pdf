@@ -48,7 +48,7 @@ export default function FaxPage(props){
 				</div>
       </div>
       </Preview>
-      <button className="button" onClick={()=>print('download_pdf', 'fax')}> print</button>
+      <button className="button" onClick={()=>print('download_pdf', 'fax')}> PRINT </button>
     </div>
   )
 }
