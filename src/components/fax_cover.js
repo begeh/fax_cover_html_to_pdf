@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import './App.css';
-import sampleRx from './sample-rx.png';
+import sampleRx from 'components/sample-rx.png';
 
 import { Preview, print } from 'react-html2pdf';
 
