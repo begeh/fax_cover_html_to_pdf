@@ -14,7 +14,7 @@
   margin-top: 10px;
   margin-bottom: 40px;
   margin-right: 1vw;
-  margin-left: 1vw;
+  margin-left: 2vw;
 }
 
 .contact{
@@ -23,6 +23,9 @@
   text-align:center;
 }
 
+.note-field{
+  margin-bottom: 20px;
+}
 .fax-header{
   padding: 10px;
   font-size: 2%;

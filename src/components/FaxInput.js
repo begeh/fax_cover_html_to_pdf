@@ -18,8 +18,10 @@ export default function FaxInput (){
     receiver_tel_number: ""
   });
 
+  const [note, setNote] = useState("");
+
   const sumbitNumbers= ()=>{
-    history.push({pathname: "/create", state: {receiver: receiver, sender: sender}})
+    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note}})
   }
 
   return (
@@ -28,47 +30,55 @@ export default function FaxInput (){
     <p>Enter Fax Information</p>
     <form className="form" noValidate autoComplete="off">
       <div className="contact">
-      <div className="form-input">
-        <div>
-          <TextField 
-              label="Fax Recipient Name" 
-              value={receiver.receiver_name} onChange={ e => setReceiver({...receiver, receiver_name: e.target.value})}
+        <div className="form-input">
+          <div>
+            <TextField 
+                label="Fax Recipient Name" 
+                value={receiver.receiver_name} onChange={ e => setReceiver({...receiver, receiver_name: e.target.value})}
+              />
+          </div>
+          <div>
+            <TextField 
+              label="Fax Recipient Tel. #" 
+              value={receiver.receiver_tel_number} onChange={ e => setReceiver({...receiver, receiver_tel_number: e.target.value})}
             />
+          </div>
+          <div>
+            <TextField 
+              label="Fax Recipient Fax #" 
+              value={receiver.receiver_fax_number} onChange={ e => setReceiver({...receiver, receiver_fax_number: e.target.value})}
+            />
+          </div>
         </div>
-        <div>
-          <TextField 
-            label="Fax Recipient Tel. #" 
-            value={receiver.receiver_tel_number} onChange={ e => setReceiver({...receiver, receiver_tel_number: e.target.value})}
-          />
-        </div>
-        <div>
-          <TextField 
-            label="Fax Recipient Fax #" 
-            value={receiver.receiver_fax_number} onChange={ e => setReceiver({...receiver, receiver_fax_number: e.target.value})}
-          />
-        </div>
-      </div>
-      <div className="form-input">
-        <div>
-          <TextField  
-            label="Fax Sender Name" 
-            value={sender.sender_name} onChange={ e => setSender({...sender, sender_name: e.target.value})}
-          />
-        </div>
-        <div>
-          <TextField  
-            label="Fax Sender Tel. #" 
-            value={sender.sender_tel_number} onChange={ e => setSender({...sender, sender_tel_number: e.target.value})}
-          />
-        </div>
-        <div>
-          <TextField  
-            label="Fax Sender Fax #" 
-            value={sender.sender_fax_number} onChange={ e => setSender({...sender, sender_fax_number: e.target.value})}
-          />
+        <div className="form-input">
+          <div>
+            <TextField  
+              label="Fax Sender Name" 
+              value={sender.sender_name} onChange={ e => setSender({...sender, sender_name: e.target.value})}
+            />
+          </div>
+          <div>
+            <TextField  
+              label="Fax Sender Tel. #" 
+              value={sender.sender_tel_number} onChange={ e => setSender({...sender, sender_tel_number: e.target.value})}
+            />
+          </div>
+          <div>
+            <TextField  
+              label="Fax Sender Fax #" 
+              value={sender.sender_fax_number} onChange={ e => setSender({...sender, sender_fax_number: e.target.value})}
+            />
+          </div>
         </div>
       </div>
-      </div>  
+      <div className="note-field">
+          <TextField
+            variant="outlined"
+            fullWidth={true}  
+            label="Enter Note" 
+            value={note} onChange={ e => setNote(e.target.value)}
+          />
+        </div>  
       <Button
       type="submit"
       fullWidth

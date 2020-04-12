@@ -5,7 +5,10 @@ import sampleRx from '../sample-rx.png';
 import { Preview, print } from 'react-html2pdf';
 
 export default function FaxPage(props){
+	const {note} = props.location.state;
+
 	const {receiver_fax_number, receiver_name, receiver_tel_number} = props.location.state.receiver;
+
 	const {sender_fax_number, sender_name, sender_tel_number} = props.location.state.sender;
 
   return (
@@ -38,7 +41,7 @@ export default function FaxPage(props){
 				</div>
 				<h2>Note</h2>
 				<p className="note">
-				This is the document note.
+				{note}
 				</p>
 				<hr/>
 				<img className="image" src={sampleRx} alt="Rx"></img>
