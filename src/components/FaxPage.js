@@ -5,8 +5,8 @@ import sampleRx from '../sample-rx.png';
 import { Preview, print } from 'react-html2pdf';
 
 export default function FaxPage(props){
-	const {receiver_fax_number} = props.location.state.receiver;
-	const {sender_fax_number} = props.location.state.sender;
+	const {receiver_fax_number, receiver_name, receiver_tel_number} = props.location.state.receiver;
+	const {sender_fax_number, sender_name, sender_tel_number} = props.location.state.sender;
 
   return (
     <div>
@@ -21,16 +21,16 @@ export default function FaxPage(props){
 					<hr />
 					<h2 >To</h2>
 					<blockquote>
-						<p><span >Name:</span> (Pharmacy Name)</p>
-						<p><span >Phone:</span> </p>
+						<p><span >Name:</span> {receiver_name}</p>
+						<p><span >Phone:</span> {receiver_tel_number}</p>
 						<p><span >Fax Number:</span> {receiver_fax_number} </p>
 					</blockquote>
 
 					<hr />
 					<h2 >From</h2>
 					<blockquote>
-						<p><span >Name:</span> (Dr. Name), (Clinic Name)</p>
-						<p><span >Phone:</span> </p>
+						<p><span >Name:</span> {sender_name}</p>
+						<p><span >Phone:</span> {sender_tel_number}</p>
 						<p><span >Fax Number:</span> {sender_fax_number}</p>
 					</blockquote>
 
