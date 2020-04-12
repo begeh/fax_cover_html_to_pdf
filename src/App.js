@@ -19,7 +19,7 @@ function App() {
 					<hr />
 					<h2 >To</h2>
 					<blockquote>
-						<p><span >Name:</span> </p>
+						<p><span >Name:</span> (Pharmacy Name)</p>
 						<p><span >Phone:</span> </p>
 						<p><span >Fax Number:</span> </p>
 					</blockquote>
@@ -27,7 +27,7 @@ function App() {
 					<hr />
 					<h2 >From</h2>
 					<blockquote>
-						<p><span >Name:</span> </p>
+						<p><span >Name:</span> (Dr. Name), (Clinic Name)</p>
 						<p><span >Phone:</span> </p>
 						<p><span >Fax Number:</span> </p>
 					</blockquote>
