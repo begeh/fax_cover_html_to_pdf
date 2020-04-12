@@ -27,6 +27,7 @@ export default function FaxInput (){
     <h1>Create A Fax Cover Page</h1>
     <p>Enter Fax Information</p>
     <form className="form" noValidate autoComplete="off">
+      <div className="contact">
       <div className="form-input">
         <div>
           <TextField 
@@ -66,6 +67,7 @@ export default function FaxInput (){
             value={sender.sender_fax_number} onChange={ e => setSender({...sender, sender_fax_number: e.target.value})}
           />
         </div>
+      </div>
       </div>  
       <Button
       type="submit"
