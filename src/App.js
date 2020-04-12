@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './App.css';
 import sampleRx from './sample-rx.png';
 
 import { Preview, print } from 'react-html2pdf';
+import TextField from '@material-ui/core/TextField';
 
 function App() {
 
   return (
-    <div className= "App">
-    <Preview id={'fax'} >
+		<>
+    <div>
+    <Preview id={'fax'}  >
       <div className="fax-header">
         <h1>FAX</h1>
 				<div>
@@ -48,7 +50,14 @@ function App() {
       </Preview>
       <button className="button" onClick={()=>print('download_pdf', 'fax')}> print</button>
     </div>
-    
+		<div className="App">
+			<p>Enter Fax Information</p>
+			<form className="form" noValidate autoComplete="off">
+				<TextField id="standard-basic" label="Fax Recipient Fax #" />
+				<TextField id="standard-basic" label="Fax Sender Fax #" />
+			</form>
+		</div>
+    </>
   );
 }
 
