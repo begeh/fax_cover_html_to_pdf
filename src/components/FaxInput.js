@@ -6,8 +6,17 @@ import {useHistory} from "react-router-dom";
 
 export default function FaxInput (){
   let history = useHistory();
-  const[sender, setSender] = useState("");
-  const [receiver, setReceiver] = useState("");
+  const[sender, setSender] = useState({
+    name: "",
+    sender_fax_number: "",
+    tel_number: ""
+  });
+
+  const [receiver, setReceiver] = useState({
+    name: "",
+    receiver_fax_number: "",
+    tel_number: ""
+  });
 
   const sumbitNumbers= ()=>{
     history.push({pathname: "/create", state: {receiver: receiver, sender: sender}})
@@ -20,12 +29,12 @@ export default function FaxInput (){
       <TextField 
         id="standard-basic"
         label="Fax Recipient Fax #" 
-        value={receiver} onChange={ e => setReceiver(e.target.value)}
+        value={receiver.receiver_fax_number} onChange={ e => setReceiver({...receiver, receiver_fax_number: e.target.value})}
       />
       <TextField 
         id="standard-basic" 
         label="Fax Sender Fax #" 
-        value={sender} onChange={ e => setSender(e.target.value)}
+        value={sender.sender_fax_number} onChange={ e => setSender({...sender, sender_fax_number: e.target.value})}
       />
     </form>
     <Button
