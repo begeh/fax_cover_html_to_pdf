@@ -74,8 +74,12 @@ export default function FaxInput (){
       <div className="note-field">
           <TextField
             variant="outlined"
+            inputProps={{
+              maxLength: 110,
+            }}
+            multiline={true}
             fullWidth={true}  
-            label="Enter Note" 
+            label="Enter Note (max. 110 chars)" 
             value={note} onChange={ e => setNote(e.target.value)}
           />
         </div>  
