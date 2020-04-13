@@ -32,8 +32,9 @@ body{
 }
 
 .fax-header{
+  margin-top: 0;
   padding: 10px;
-  font-size: 2%;
+  font-size: 4.5px;
   width: 45%;
 }
 
@@ -52,7 +53,7 @@ body{
 .confidential{
   margin-top: 10px;
   text-align: center;
-  border-bottom-style: solid;
+  /* border-bottom-style: solid; */
 }
 
 .statement{
