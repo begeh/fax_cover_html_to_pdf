@@ -34,7 +34,7 @@ body{
 .fax-header{
   margin-top: 0;
   padding: 10px;
-  font-size: 0.25em;
+  font-size: 4.5px;
   width: 45%;
 }
 
@@ -57,7 +57,7 @@ body{
 }
 
 .statement{
-  font-size: 5px;
+  font-size: 4.5px;
   padding-bottom: 3px;
 }
 
