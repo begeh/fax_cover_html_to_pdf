@@ -34,8 +34,26 @@ body{
 .fax-header{
   margin-top: 0;
   padding: 10px;
-  font-size: 4.5px;
   width: 45%;
+  font-size: 5px;
+}
+
+.fax-header h1{
+  margin:0;
+}
+
+.fax-header div h2{
+  margin-top:0;
+}
+
+.fax-header div blockquote{
+  margin-bottom: 2.5px;
+  margin-top:0;
+}
+
+.fax-header div blockquote p{
+  font-size: 8px;
+  margin: 0;
 }
 
 .note{
