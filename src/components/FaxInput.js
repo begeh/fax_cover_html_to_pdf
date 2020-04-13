@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import '../App.css';
-import {TextField, Button, responsiveFontSizes} from '@material-ui/core/';
+import {TextField, Button} from '@material-ui/core/';
 
 import {useHistory} from "react-router-dom";
 
@@ -23,8 +23,10 @@ export default function FaxInput (){
 
   const [note, setNote] = useState("");
 
+  const [pages, setPages] = useState("");
+
   const sumbitNumbers= ()=>{
-    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note, imageURL: imageURL}})
+    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note, imageURL: imageURL, pages: pages}})
   }
 
   return (
@@ -37,21 +39,30 @@ export default function FaxInput (){
           <div>
             <TextField 
               InputLabelProps={{style: {fontSize: "0.8rem"}}} 
-              label="Fax Recipient Name" 
+              label="Fax Recipient Name"
+              inputProps={{
+                maxLength: 80
+              }}  
               value={receiver.receiver_name} onChange={ e => setReceiver({...receiver, receiver_name: e.target.value})}
               />
           </div>
           <div>
             <TextField 
               InputLabelProps={{style: {fontSize: "0.8rem"}}} 
-              label="Fax Recipient Tel. #" 
+              label="Fax Recipient Tel. #"
+              inputProps={{
+                maxLength: 80
+              }}  
               value={receiver.receiver_tel_number} onChange={ e => setReceiver({...receiver, receiver_tel_number: e.target.value})}
             />
           </div>
           <div>
             <TextField 
               InputLabelProps={{style: {fontSize: "0.8rem"}}} 
-              label="Fax Recipient Fax #" 
+              label="Fax Recipient Fax #"
+              inputProps={{
+                maxLength: 80
+              }}  
               value={receiver.receiver_fax_number} onChange={ e => setReceiver({...receiver, receiver_fax_number: e.target.value})}
             />
           </div>
@@ -60,26 +71,49 @@ export default function FaxInput (){
           <div>
             <TextField  
               InputLabelProps={{style: {fontSize: "0.8rem"}}} 
-              label="Fax Sender Name" 
+              label="Fax Sender Name"
+              inputProps={{
+                maxLength: 80
+              }}  
               value={sender.sender_name} onChange={ e => setSender({...sender, sender_name: e.target.value})}
             />
           </div>
           <div>
             <TextField  
               InputLabelProps={{style: {fontSize: "0.8rem"}}} 
-              label="Fax Sender Tel. #" 
+              label="Fax Sender Tel. #"
+              inputProps={{
+                maxLength: 80
+              }}  
               value={sender.sender_tel_number} onChange={ e => setSender({...sender, sender_tel_number: e.target.value})}
             />
           </div>
           <div>
             <TextField
               InputLabelProps={{style: {fontSize: "0.8rem"}}}   
-              label="Fax Sender Fax #" 
+              label="Fax Sender Fax #"
+              inputProps={{
+                maxLength: 80
+              }} 
               value={sender.sender_fax_number} onChange={ e => setSender({...sender, sender_fax_number: e.target.value})}
             />
           </div>
         </div>
       </div>
+      <div className="other-field" >
+          <TextField
+            variant="outlined"
+            multiline={true}
+            fullWidth={true} 
+            label="No. of Pages to Be Faxed (including cover)"
+            inputProps={{
+              maxLength: 3
+            }} 
+            InputLabelProps={{style: {fontSize: "0.8rem"}}} 
+            value={pages} onChange={ e => setPages(e.target.value)}
+          />
+      </div>  
+
       <div className="other-field" hidden>
           <TextField
             variant="outlined"
@@ -88,7 +122,8 @@ export default function FaxInput (){
             label="Enter Image URL" 
             value={imageURL} onChange={ e => setImageURL(e.target.value)}
           />
-        </div>  
+        </div> 
+
       <div id="field" className="other-field">
           <TextField
             variant="outlined"
