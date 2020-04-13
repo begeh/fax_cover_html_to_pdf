@@ -48,6 +48,7 @@
 .confidential{
   margin-top: 10px;
   text-align: center;
+  border-bottom-style: solid;
 }
 
 .statement{
@@ -61,6 +62,11 @@
   width: 50px;
   height:25px;
   margin-left: 20%;
+}
+
+.bottom{
+  height: 55px;
+  border-bottom-style: solid;
 }
 
 @media screen and (max-width: 986px) {

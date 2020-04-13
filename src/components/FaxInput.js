@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import '../App.css';
-import {TextField, Button} from '@material-ui/core/';
+import {TextField, Button, FormControlLabel, Checkbox} from '@material-ui/core/';
 
 import {useHistory} from "react-router-dom";
 
@@ -25,8 +25,10 @@ export default function FaxInput (){
 
   const [pages, setPages] = useState("");
 
+  const [check, setCheck] = useState(false);
+
   const sumbitNumbers= ()=>{
-    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note, imageURL: imageURL, pages: pages}})
+    history.push({pathname: "/create", state: {receiver: receiver, sender: sender, note: note, imageURL: imageURL, pages: pages, check: check}})
   }
 
   return (
@@ -136,7 +138,18 @@ export default function FaxInput (){
             label="Enter Note (max. 110 chars)" 
             value={note} onChange={ e => setNote(e.target.value)}
           />
-        </div>  
+        </div>
+        <FormControlLabel
+        control={
+          <Checkbox
+            checked={check}
+            onChange={e => setCheck(e.target.checked)}
+            name="confidential"
+            color="primary"
+          />
+        }
+        label="Confidential"
+      />  
       <Button
       type="submit"
       fullWidth
