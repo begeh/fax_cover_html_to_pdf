@@ -107,7 +107,7 @@ export default function FaxInput (){
             variant="outlined"
             multiline={true}
             fullWidth={true} 
-            label="No. of Pages to Be Faxed (including cover)"
+            label="No. of Pages to Be Faxed (incl. cover)"
             inputProps={{
               maxLength: 3
             }} 
