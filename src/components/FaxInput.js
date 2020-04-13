@@ -32,7 +32,7 @@ export default function FaxInput (){
   }
 
   return (
-    <div className="App">
+    <div className="input-page">
     <h1>Create A Fax Cover Page</h1>
     <p>Enter Fax Information</p>
     <form className="form" noValidate autoComplete="off">
