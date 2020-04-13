@@ -5,7 +5,7 @@ import sampleRx from '../images/sample-rx.png';
 import { Preview, print } from 'react-html2pdf';
 
 export default function FaxPage(props){
-	const {note, imageURL} = props.location.state;
+	const {note, imageURL, pages} = props.location.state;
 
 	const {receiver_fax_number, receiver_name, receiver_tel_number} = props.location.state.receiver;
 
@@ -19,7 +19,7 @@ export default function FaxPage(props){
 				<div>
 					<blockquote>
 						<p><span >Date:</span> { (new Date()).toDateString()}</p>
-						<p><span >Pages including cover sheet:</span> 1</p>
+						<p><span >Pages including cover sheet:</span> {pages}</p>
 					</blockquote>
 					<hr />
 					<h2 >To</h2>
