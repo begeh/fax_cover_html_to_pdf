@@ -112,7 +112,8 @@ export default function FaxInput (){
             InputLabelProps={{style: {fontSize: "0.8rem"}}} 
             value={pages} onChange={ e => setPages(e.target.value)}
           />
-        </div>  
+      </div>  
+
       <div className="other-field" hidden>
           <TextField
             variant="outlined"
@@ -121,7 +122,8 @@ export default function FaxInput (){
             label="Enter Image URL" 
             value={imageURL} onChange={ e => setImageURL(e.target.value)}
           />
-        </div>  
+        </div> 
+
       <div id="field" className="other-field">
           <TextField
             variant="outlined"

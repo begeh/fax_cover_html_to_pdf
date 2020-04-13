@@ -44,7 +44,10 @@ export default function FaxPage(props){
 				{note}
 				</p>
 				<hr/>
-				<img className="image" src={imageURL ? imageURL : sampleRx} alt="Rx"></img>
+				<div className="image"></div>
+
+				<img className="image" src={imageURL ? imageURL : sampleRx} alt="Rx" hidden></img>
+				
 				<div className="confidential">
 					<h2><strong>CONFIDENTIAL</strong></h2>
 					<p className="statement">The documents accompanying this facsimile transmittal are intended only for the use of the individual or entity to which it is addressed. It may contain information that is privileged, confidential and exempt from disclosure under law. If the reader of this message is not the intended recipient, you are notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you are not the intended recipient, you are hereby notified that law strictly prohibits any disclosure, copying, distribution or action taken in reliance on the contents of these documents. If you have received this fax in error, please notify the sender immediately to arrange for return of these documents.</p>
