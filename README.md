@@ -1,7 +1,5 @@
 Creates Fax Cover Page by Converting HTML to PDF using react-html2pdf dependency
 
-Deployed site at https://fax-cover-html-to-pdf.netlify.com/
-
 ## Available Scripts
 
 In the project directory, you can run:
